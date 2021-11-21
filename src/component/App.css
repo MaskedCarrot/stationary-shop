@@ -1,0 +1,131 @@
+.main-page {
+
+  background-color: rgb(244, 244, 244);
+
+}
+.main-page h3{
+  margin-left: 40px;
+  margin-top: 20px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 44px;
+color: #333333;
+}
+
+.main-page .row1{
+  margin-top: 20px;
+  margin-left: 10px;
+ 
+}
+.main-page .row1 .col-md-auto{
+  box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin-left: 30px;
+  background-color: white
+}
+
+.main-page .row1 .col-md-auto p{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+color: #000000;
+}
+.main-page .row2{
+  margin-top: 20px;
+  margin-left: 10px;
+}
+.main-page .row2 .col-md-auto{
+
+  margin-left: 30px;
+  box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1), 2px 2px 2px rgba(0, 0, 0, 0.2);
+border-radius: 20px;
+background-color: white;
+}
+
+.main-page .row2 .col-md-auto p{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 26px;
+color: #000000;
+}
+
+.main-page .row1 .col-md-auto img{
+  position: static;
+  width: 70px;
+  height: 55px;
+  left: 10px;
+  top: 10px;
+
+
+border-radius: 20px;
+
+
+margin: 0px 10px;
+}
+.main-page .row2 .col-md-auto img{
+  position: static;
+  width: 70px;
+  height: 55px;
+ 
+border-radius: 20px;
+
+
+margin: 0px 10px;
+}
+
+
+ .all-items-data .img{
+
+  width: 200px;
+  height: 170px;
+  left: 4px;
+  top: 4px;
+ border-radius: 12px;
+ padding-top: 7px;
+}
+
+
+.all-items-data .all-col
+{
+  border: solid;
+  border-radius: 12px;
+  border-color: rgb(237, 237, 237);
+  margin-left: 45px;
+}
+
+.all-items-data .all-col p{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 22px;
+text-align: center;
+
+}
+
+.items-data .items-col {
+  border: solid;
+  border-radius: 12px;
+  border-color: rgb(237, 237, 237);
+  margin-left: 45px;
+}
+.items-data .items-col .img2{
+  width: 200px;
+  height: 170px;
+  left: 4px;
+  top: 4px;
+ border-radius: 12px;
+ padding-top: 7px;
+}
+
+.view-button button{
+  margin: 25px auto;
+  width: 210px;
+  height: 40px;
+  background: #EEA94F;
+  border-radius: 10px;
+  border: none;
+  font-size: 25px;
+}
