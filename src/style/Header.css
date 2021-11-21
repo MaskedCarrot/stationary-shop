@@ -1,8 +1,17 @@
 .header {
+    padding: 8  px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
+
+}
+
+.header.active {
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);   
 }
 
 .header-left {
@@ -24,6 +33,7 @@
 
 .header-search {
     min-width: 00px;
+    width: 320px;
     border: none;
     background-color: #f4f4f4;
 }
