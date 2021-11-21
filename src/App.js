@@ -4,6 +4,7 @@ import './App.css'
 import Home from './component/Home'
 import Login from './component/Login'
 import Employee from './component/Employee'
+import Category from './component/Category'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
                   <Route path="/" exact element={<Home />} />
                   <Route path="/login" exact element={<Login />} />
                   <Route path="/employee" exact element={<Employee />} />
+                  <Route path="/category" exact element={<Category />} />
               </Routes>
           </BrowserRouter>
         </div>
