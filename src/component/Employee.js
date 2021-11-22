@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import employeeAvatar from '../resources/employeeAvatar.png';
 
 const Employee = () => {
@@ -41,7 +42,7 @@ const Employee = () => {
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', width: '500px', margin: 'auto' }}>
-        <div style={{ width: '200px', height: '60px', backgroundColor: '#EEA94F', borderRadius: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', cursor: 'pointer' }}>Edit Profile</div>
+        <div style={{ width: '200px', height: '60px', backgroundColor: '#EEA94F', borderRadius: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', cursor: 'pointer' }} ><Link style={{ color: 'white', textDecoration: 'none' }} to='/editemployee'>Edit Employee</Link></div>
         <div style={{ width: '200px', height: '60px', border: '2px solid #EEA94F', borderRadius: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#EEA94F', cursor: 'pointer' }}>Delete Profile</div>
       </div>
     </div>
