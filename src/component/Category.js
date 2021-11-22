@@ -11,28 +11,24 @@ const Category = () => {
       </div>
       <div style={{ marginLeft: '50px' }}>
         <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '15px' }}>
-          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '92px' }}>CATEGORY ID &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;  </div>
+          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '92px' }}>CATEGORY ID &emsp; &emsp;&emsp;  </div>
           <div style={{ fontSize: '20px' }}>12128</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '15px' }}>
-          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '100px' }}>EMAIL ID &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
-          <div style={{ fontSize: '20px' }}>name.123@gmail.com</div>
+          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '100px' }}>ITEM 1 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+          <div style={{ fontSize: '20px' }}>Camel Stapler</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '15px' }}>
-          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '98px' }}>BATCH NUMBER&emsp;&emsp;&emsp;&emsp;&emsp;</div>
-          <div style={{ fontSize: '20px' }}>1258300078215697</div>
+          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '100px' }}>ITEM 2 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+          <div style={{ fontSize: '20px' }}>Camlin Stapler</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '15px' }}>
-          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '96px' }}>ADDRESS &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
-          <div style={{ fontSize: '20px' }}>72, Vaidh Ji ka Chohra, Jodhpur</div>
+          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '100px' }}>ITEM 3 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+          <div style={{ fontSize: '20px' }}>Camel Hole Puncher</div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '15px' }}>
-          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '96px' }}>CONTACT NUMBER&emsp;&emsp;&emsp;&emsp;</div>
-          <div style={{ fontSize: '20px' }}>9999620000</div>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '15px' }}>
-          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '105px' }}>DATE OF MANUFACTURING</div>
-          <div style={{ fontSize: '20px' }}>22/05/2019</div>
+          <div style={{ fontWeight: 'bold', fontSize: '20px', marginRight: '100px' }}>ITEM 4 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
+          <div style={{ fontSize: '20px' }}>Korea Hole Puncher</div>
         </div>
       </div>
 
