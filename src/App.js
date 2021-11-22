@@ -4,6 +4,9 @@ import './App.css'
 import Home from './component/Home'
 import Login from './component/Login'
 import Employee from './component/Employee'
+import Category from './component/Category'
+import EditEmployee from './component/EditEmployee'
+import EditCategory from './component/EditCategory'
 
 
 const App = () => {
@@ -20,6 +23,9 @@ const App = () => {
                   <Route path="/" exact element={<Home />} />
                   <Route path="/login" exact element={<Login />} />
                   <Route path="/employee" exact element={<Employee />} />
+                  <Route path="/category" exact element={<Category />} />
+                  <Route path="/editemployee" exact element={<EditEmployee />} />
+                  <Route path="/editcategory" exact element={<EditCategory />} />
               </Routes>
           </BrowserRouter>
         </div>
