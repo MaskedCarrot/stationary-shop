@@ -8,7 +8,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import '../style/Header.css'
 
 const Header = (props) => {
-    const userLoggedIn = false
+    const userLoggedIn = true
     const [headerActive, setHeaderActive] = useState(false)
 
 
@@ -55,6 +55,14 @@ const Header = (props) => {
                         </div>
                     )
             }
+
+            <div className='toggle-switch'>
+                Shop status
+                <label class='toggle-switch-label' htmlFor='toggleSwitch'>
+                    <input type='checkbox' className='toggle-switch-checkbox' name='toggleSwitch' id='toggleSwitch' />
+                    <span class='slider round'></span>
+                </label>
+            </div>
         </div>
     )
 }
