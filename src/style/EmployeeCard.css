@@ -1,0 +1,30 @@
+.employee-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+
+	background: #FFFFFF;
+	border: 1px solid #CBCBCB;
+	box-sizing: border-box;
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.15);
+	border-radius: 12px;
+}
+
+.employee-name {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 42px;
+
+	color: #000000;
+
+
+	/* Inside Auto Layout */
+
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin: 0px 10px;
+}
