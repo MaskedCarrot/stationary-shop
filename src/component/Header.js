@@ -8,7 +8,7 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import '../style/Header.css'
 
 const Header = (props) => {
-    const userLoggedIn = true
+    const userLoggedIn = props.userIsAuth
     const [headerActive, setHeaderActive] = useState(false)
 
 
