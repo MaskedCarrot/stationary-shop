@@ -9,6 +9,7 @@ import EditEmployee from './component/EditEmployee'
 import EditCategory from './component/EditCategory'
 import EmployeeList from './component/EmployeeList'
 import Registers from './component/Registers'
+import Pens from './component/Pens'
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
                   <Route path="/editcategory" exact element={<EditCategory />} />
                   <Route path="/employeelist" exact element={<EmployeeList />} />
                   <Route path="/registers" exact element={<Registers />} />
+                  <Route path="/pens" exact element={<Pens />} />
               </Routes>
           </BrowserRouter>
         </div>

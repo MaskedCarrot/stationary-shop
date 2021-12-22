@@ -1,8 +1,8 @@
 import React from 'react'
-import register1 from './images/register1.jpeg'
-import register2 from './images/register2.jpeg'
-import register3 from './images/register3.jpeg'
-import register4 from './images/register4.jpeg'
+import pen1 from './images/pen1.jpg'
+import pen2 from './images/pen2.jpg'
+import pen3 from './images/pen3.jpg'
+import pen4 from './images/pen4.jpg'
 const Pens = () => {
     return (
         <div>
@@ -10,7 +10,7 @@ const Pens = () => {
                 <div className="row">
                     <div className="col-md-3">
                         <div className="row">
-                            <img src={register1}></img>
+                            <img src={pen1}></img>
                             
                         </div>
                         <div className="row">
@@ -20,7 +20,7 @@ const Pens = () => {
                     </div>
                     <div className="col-md-3">
                         <div className="row">
-                            <img src={register2}></img>
+                            <img src={pen2}></img>
                         </div>
                         <div className="row">
                             <p style={{paddingLeft:"130px",paddingTop:"20px",fontSize:"25px"}}> ₹ 500</p>
@@ -28,7 +28,7 @@ const Pens = () => {
                     </div>
                     <div className="col-md-3">
                         <div className="row">
-                            <img src={register3}></img>
+                            <img src={pen3}></img>
                         </div>
                         <div className="row">
                             <p style={{paddingLeft:"130px",paddingTop:"20px",fontSize:"25px"}}> ₹ 900</p>
@@ -36,7 +36,7 @@ const Pens = () => {
                     </div>
                     <div className="col-md-3">
                         <div className="row">
-                            <img src={register4}></img>
+                            <img src={pen4}></img>
                         </div>
                         <div className="row">
                             <p style={{paddingLeft:"130px",paddingTop:"20px",fontSize:"25px"}}> ₹ 340</p>
