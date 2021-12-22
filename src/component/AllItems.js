@@ -16,7 +16,6 @@ const AllItems = () => {
         } catch (error) {
             alert(error.error_description || error.message)
         }
-
     }
 
     const [itemData, setitemData] = useState([])
