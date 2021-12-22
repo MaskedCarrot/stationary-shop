@@ -2,20 +2,19 @@ import React from 'react'
 import Header from './Header'
 import MainInfo from './MainInfo'
 import Footer from './Footer'
-import MainPage from './MainPage'
 import AllItems from './AllItems'
-import { useLocation } from 'react-router-dom'
+import { supabase } from '../supabaseClient'
 
 /**
  * This is the first page that is displayed to the customer, employee, and the shopkeer.
  */
 const Home = (props) => {
 
-    const state = useLocation();
+    const user = supabase.auth.user()
 
     return (
         <div>
-            <Header userIsAuth={state.userIsAuth} />
+            <Header userIsAuth={user && user.aud === 'authenticated'} />
             <MainInfo />
             <AllItems />
             <Footer />
