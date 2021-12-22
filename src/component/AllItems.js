@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from '../supabaseClient'
 import ItemCard from './ItemCard'
+import '../style/Items.css'
 
 const AllItems = () => {
 
@@ -26,7 +27,7 @@ const AllItems = () => {
     return (
         <div>
             <h4>All Items in One place</h4>
-            <ul>
+            <ul className='item'>
                 {itemData.map((item, index) => {
                     return <li key={index}><ItemCard data={item}/></li>
                 })}

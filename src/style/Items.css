@@ -1,0 +1,10 @@
+.item {
+  padding: 8 px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: sticky;
+  top: 0;
+}
