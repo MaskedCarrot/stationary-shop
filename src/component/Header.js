@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import { supabase } from "../supabaseClient"
+import React, { useState, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
 import GroupIcon from '@mui/icons-material/Group';
@@ -11,7 +12,6 @@ const Header = (props) => {
     const userLoggedIn = props.userIsAuth
     const [headerActive, setHeaderActive] = useState(false)
 
-
     // Adds shadow below the header when the page is scrolled.
     window.addEventListener('scroll', () => {
         if (window.scrollY >= 80) {
@@ -20,6 +20,41 @@ const Header = (props) => {
             setHeaderActive(false)
         }
     })
+
+    async function fetchShopStatus() {
+        try {
+            let { data: shop, error } = await supabase
+                .from('shop')
+                .select('status')
+
+            if (error) {
+                throw(error)
+            } else {
+                setStatus(shop[0].status)
+            }
+        } catch (error) {
+            alert(error.error_description || error.message)
+        }
+    }
+
+    const [shopStatus, setStatus] = useState([])
+    useEffect(() => {
+        fetchShopStatus();
+    }, [])
+
+    async function setShopStatus() {
+        if (document.getElementById('toggleSwitch').checked) {
+            const { data, error } = await supabase
+                .from('shop')
+                .update({ 'status': true })
+                .eq('name', 'Stationary Shop')
+        } else {
+            const { data, error } = await supabase
+                .from('shop')
+                .update({ 'status': false })
+                .eq('name', 'Stationary Shop')
+        }
+    }
 
     return (
         <div className={headerActive ? 'header active' : 'header'} >
@@ -58,10 +93,22 @@ const Header = (props) => {
 
             <div className='toggle-switch'>
                 Shop status
-                <label class='toggle-switch-label' htmlFor='toggleSwitch'>
-                    <input type='checkbox' className='toggle-switch-checkbox' name='toggleSwitch' id='toggleSwitch' />
-                    <span class='slider round'></span>
-                </label>
+                {
+                    shopStatus ?
+                        (
+                            <label class='toggle-switch-label' htmlFor='toggleSwitch'>
+                                <input type='checkbox' onChange={setShopStatus} className='toggle-switch-checkbox' name='toggleSwitch'
+                                    id='toggleSwitch' checked />
+                                <span class='slider round'></span>
+                            </label>
+                        ) : (
+                            <label class='toggle-switch-label' htmlFor='toggleSwitch'>
+                                <input type='checkbox' onChange={setShopStatus} className='toggle-switch-checkbox' name='toggleSwitch'
+                                    id='toggleSwitch' />
+                                <span class='slider round'></span>
+                            </label>
+                        )
+                }
             </div>
         </div>
     )
