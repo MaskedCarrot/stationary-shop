@@ -2,7 +2,6 @@ import React from 'react'
 import Header from './Header'
 import MainInfo from './MainInfo'
 import Footer from './Footer'
-import MainPage from './MainPage'
 import AllItems from './AllItems'
 import { useLocation } from 'react-router-dom'
 
@@ -11,8 +10,7 @@ import { useLocation } from 'react-router-dom'
  */
 const Home = (props) => {
 
-    const state = useLocation();
-
+    const { state } = useLocation();
     return (
         <div>
             <Header userIsAuth={state.userIsAuth} />

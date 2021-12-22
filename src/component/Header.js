@@ -9,7 +9,9 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import '../style/Header.css'
 
 const Header = (props) => {
+    console.log(props)
     const userLoggedIn = props.userIsAuth
+    
     const [headerActive, setHeaderActive] = useState(false)
 
     // Adds shadow below the header when the page is scrolled.
@@ -28,7 +30,7 @@ const Header = (props) => {
                 .select('status')
 
             if (error) {
-                throw(error)
+                throw (error)
             } else {
                 setStatus(shop[0].status)
             }
@@ -60,14 +62,14 @@ const Header = (props) => {
         <div className={headerActive ? 'header active' : 'header'} >
 
             <div className='header-left' >
-                <MenuBookIcon style={{ fontSize:'50px', color: '#88c198', paddingLeft: '5px', paddingRight: '7px' }} />
+                <MenuBookIcon style={{ fontSize: '50px', color: '#88c198', paddingLeft: '5px', paddingRight: '7px' }} />
                 <span style={{ color: '#333333' }}>
                     Stationary Shop
                 </span>
             </div>
 
             <div className='header-centre' >
-                < SearchIcon style={{ fontSize:'30px', padding: '3px', color: 'gray' }} />
+                < SearchIcon style={{ fontSize: '30px', padding: '3px', color: 'gray' }} />
                 <input className='header-search' type='text' placeholder='What are you looking for?' />
             </div>
 
@@ -78,7 +80,25 @@ const Header = (props) => {
                             <CategoryIcon />
                             <InventoryIcon />
                             <GroupIcon />
-                            <img alt='user avatar' />
+                            <div className='toggle-switch'>
+                                Shop status
+                                {
+                                    shopStatus ?
+                                        (
+                                            <label class='toggle-switch-label' htmlFor='toggleSwitch'>
+                                                <input type='checkbox' onChange={setShopStatus} className='toggle-switch-checkbox' name='toggleSwitch'
+                                                    id='toggleSwitch' checked />
+                                                <span class='slider round'></span>
+                                            </label>
+                                        ) : (
+                                            <label class='toggle-switch-label' htmlFor='toggleSwitch'>
+                                                <input type='checkbox' onChange={setShopStatus} className='toggle-switch-checkbox' name='toggleSwitch'
+                                                    id='toggleSwitch' />
+                                                <span class='slider round'></span>
+                                            </label>
+                                        )
+                                }
+                            </div>
                         </div>
                     ) : (
                         <div className='header-right-logged-out'>
@@ -91,25 +111,7 @@ const Header = (props) => {
                     )
             }
 
-            <div className='toggle-switch'>
-                Shop status
-                {
-                    shopStatus ?
-                        (
-                            <label class='toggle-switch-label' htmlFor='toggleSwitch'>
-                                <input type='checkbox' onChange={setShopStatus} className='toggle-switch-checkbox' name='toggleSwitch'
-                                    id='toggleSwitch' checked />
-                                <span class='slider round'></span>
-                            </label>
-                        ) : (
-                            <label class='toggle-switch-label' htmlFor='toggleSwitch'>
-                                <input type='checkbox' onChange={setShopStatus} className='toggle-switch-checkbox' name='toggleSwitch'
-                                    id='toggleSwitch' />
-                                <span class='slider round'></span>
-                            </label>
-                        )
-                }
-            </div>
+
         </div>
     )
 }
