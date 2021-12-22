@@ -2,7 +2,9 @@
   padding: 8 px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  margin-right: 40px;
+  justify-content: space-around;
+  /* width: 200px; */
   align-items: center;
   background-color: white;
   position: sticky;

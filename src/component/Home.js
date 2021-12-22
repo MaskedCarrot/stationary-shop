@@ -13,8 +13,8 @@ const Home = () => {
         <div>
             <Header />
             <MainInfo />
-            <Footer />
             <AllItems />
+            <Footer />
         </div>
     )
 }
