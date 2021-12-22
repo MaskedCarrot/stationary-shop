@@ -3,6 +3,7 @@ import Header from './Header'
 import MainInfo from './MainInfo'
 import Footer from './Footer'
 import AllItems from './AllItems'
+import AllCategory from './AllCategory'
 import { supabase } from '../supabaseClient'
 
 /**
@@ -17,6 +18,7 @@ const Home = (props) => {
             <Header userIsAuth={user && user.aud === 'authenticated'} />
             <MainInfo />
             <AllItems />
+            <AllCategory />
             <Footer />
         </div>
     )
