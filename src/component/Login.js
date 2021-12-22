@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,12 +14,15 @@ import { supabase } from '../supabaseClient'
 
 const theme = createTheme();
 
+
 export default function SignIn() {
+
+  const navigate = useNavigate()
   const handleSubmit = async (event) => {
 
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-
+    
 
     // eslint-disable-next-line no-console
     console.log({
@@ -29,18 +32,15 @@ export default function SignIn() {
 
     try {
       const { user, session, error } = await supabase.auth.signIn({
-        email: 'stationaryowner@lnmiit.ac.in',//data.get('email'),
-        password: 'password' //data.get('password'),
+        email: data.get('email'), // 'stationaryowner@lnmiit.ac.in'
+        password: data.get('password'), // 'password'
       })
 
       if (error) throw error
-      if (session) {
-         ;
-      }
+      if (session) navigate('../', {replace: true, state:{userIsAuth: user.aud == 'authenticated'}});
     } catch (error) {
       alert(error.error_description || error.message)
     }
-
   };
 
   return (

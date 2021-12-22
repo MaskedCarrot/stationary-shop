@@ -4,17 +4,21 @@ import MainInfo from './MainInfo'
 import Footer from './Footer'
 import MainPage from './MainPage'
 import AllItems from './AllItems'
+import { useLocation } from 'react-router-dom'
 
 /**
  * This is the first page that is displayed to the customer, employee, and the shopkeer.
  */
-const Home = () => {
+const Home = (props) => {
+
+    const { state } = useLocation();
+
     return (
         <div>
-            <Header />
+            <Header userIsAuth={state.userIsAuth} />
             <MainInfo />
-            <Footer />
             <AllItems />
+            <Footer />
         </div>
     )
 }
