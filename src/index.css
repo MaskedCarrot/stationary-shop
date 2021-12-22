@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.toggle-switch {
+  display: flex;
+  align-items: center;
+}
+
 .toggle-switch-label {
   position: relative;
   display: inline-block;

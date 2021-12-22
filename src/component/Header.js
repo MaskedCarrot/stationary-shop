@@ -78,7 +78,6 @@ const Header = (props) => {
                             <CategoryIcon />
                             <InventoryIcon />
                             <GroupIcon />
-                            <img alt='user avatar' />
                         </div>
                     ) : (
                         <div className='header-right-logged-out'>
