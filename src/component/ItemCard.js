@@ -3,12 +3,12 @@ import React from 'react'
 
 const ItemCard = (props) => {
     return (
-        <Card sx={{ maxWidth: 200 }}>
+        <Card sx={{ maxWidth: 250 }}>
             <CardMedia
                 component="img"
-                height="100"
-                image="/static/images/cards/contemplative-reptile.jpg"
-                alt="green iguana"
+                height="130"
+                image={props.data.image_url}
+                alt={props.data.name}
             />
             <CardContent>
                 <Typography gutterBottom variant="h6" component="div">
