@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom'
  */
 const Home = (props) => {
 
-    const { state } = useLocation();
+    const state = useLocation();
 
     return (
         <div>

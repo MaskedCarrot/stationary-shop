@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { supabase } from '../supabaseClient'
 import ItemCard from './ItemCard'
 import '../style/Items.css'
+import { Typography } from '@mui/material'
 
 const AllItems = () => {
+
+    const userIsAuth = false
 
     const fetchItemData = async () => {
         try {
@@ -26,10 +29,16 @@ const AllItems = () => {
 
     return (
         <div>
-            <h4>All Items in One place</h4>
-            <ul className='item'>
+            <Typography
+                variant="h4"
+                gutterBottom component="div"
+                style={{ margin: '10px' }}
+            >
+                All Items in one place
+            </Typography>
+            <ul className='item' >
                 {itemData.map((item, index) => {
-                    return <li key={index}><ItemCard data={item}/></li>
+                    return <li key={index}><ItemCard data={item} /></li>
                 })}
             </ul>
         </div>
