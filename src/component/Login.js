@@ -37,7 +37,7 @@ export default function SignIn() {
       })
 
       if (error) throw error
-      if (session) navigate('../', {replace: true, state:{userIsAuth: user.aud === 'authenticated'}});
+      if (session) navigate('../', {replace: true});
     } catch (error) {
       alert(error.error_description || error.message)
     }

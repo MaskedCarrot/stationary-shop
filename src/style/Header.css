@@ -41,6 +41,12 @@
     outline: none;
 }
 
+.header-right-logged-in {
+    display: flex;
+    margin-left: auto;
+    column-gap: 1em;
+}
+
 .header-right-logged-out {
     display: flex;
     align-self: stretch;
