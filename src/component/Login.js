@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,7 +11,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import LNMIITWebsite from './LNMIITWebsite';
 import { supabase } from '../supabaseClient'
-
 
 const theme = createTheme();
 
@@ -28,12 +28,15 @@ export default function SignIn() {
     });
 
     try {
-      const { user, session, error } = await supabase.auth.signUp({
+      const { user, session, error } = await supabase.auth.signIn({
         email: 'stationaryowner@lnmiit.ac.in',//data.get('email'),
         password: 'password' //data.get('password'),
       })
 
       if (error) throw error
+      if (session) {
+         ;
+      }
     } catch (error) {
       alert(error.error_description || error.message)
     }

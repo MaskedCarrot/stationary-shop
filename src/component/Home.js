@@ -3,10 +3,7 @@ import Header from './Header'
 import MainInfo from './MainInfo'
 import Footer from './Footer'
 import MainPage from './MainPage'
-
-
-
-
+import AllItems from './AllItems'
 
 /**
  * This is the first page that is displayed to the customer, employee, and the shopkeer.
@@ -16,8 +13,8 @@ const Home = () => {
         <div>
             <Header />
             <MainInfo />
-            <MainPage />
-            {/* <Footer /> */}
+            <Footer />
+            <AllItems />
         </div>
     )
 }
