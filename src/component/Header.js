@@ -72,7 +72,8 @@ const Header = (props) => {
 
             <div className='header-centre' >
                 < SearchIcon style={{ fontSize: '30px', padding: '3px', color: 'gray' }} />
-                <input className='header-search' type='text' placeholder='What are you looking for?' />
+                <input id="serach_place" className='header-search' type='text' placeholder='What are you looking for?' />
+                
             </div>
 
             {
@@ -81,7 +82,7 @@ const Header = (props) => {
                         <div className='header-right-logged-in'>
                             <CategoryIcon />
                             <InventoryIcon />
-                            <GroupIcon />
+                            <GroupIcon onClick = {() => window.location.href='/showemployee'}/>
                             <MaterialUISwitch checked={shopStatus} onChange={setShopStatus}/>
                             
 
@@ -101,6 +102,7 @@ const Header = (props) => {
         </div>
     )
 }
+
 
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({

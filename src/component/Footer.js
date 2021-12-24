@@ -11,7 +11,7 @@ const Footer = () => {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                minHeight: '100vh',
+                minHeight: '10vh',
             }}
         >
             <CssBaseline />

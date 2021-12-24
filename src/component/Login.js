@@ -31,7 +31,7 @@ export default function SignIn() {
     });
 
     try {
-      const { user, session, error } = await supabase.auth.signUp({
+      const { user, session, error } = await supabase.auth.signIn({
         email: data.get('email'), // 'stationaryowner@lnmiit.ac.in'
         password: data.get('password'), // 'password'
       })
