@@ -1,7 +1,11 @@
 import { Card, CardContent, CardMedia, Typography, CardActions, Button } from '@mui/material'
 import React from 'react'
+import '../style/button.css'
 
 const ItemCard = (props) => {
+
+    const userLoggedIn = props.userIsAuth
+
     return (
         <Card sx={{ maxWidth: 250 }}>
             <CardMedia
@@ -21,9 +25,22 @@ const ItemCard = (props) => {
                     Quantity {props.data.quantity}
                 </Typography>
             </CardContent>
-            <CardActions>
-                <Button size="small">Edit</Button>
-            </CardActions>
+            {
+                !userLoggedIn ? 
+                (
+                    <CardActions>
+                        <Button style={{color: 'black', backgroundColor: '#D3D3D3'}}
+                        onClick={() => window.location.href='/edititem'} 
+                            size="small">
+                                Edit
+                        </Button>
+                    </CardActions>
+                ):(
+                    <CardActions>
+                        {/* <Button size="small">No Edit</Button> */}
+                    </CardActions>
+                )
+            }
         </Card>
     )
 }
