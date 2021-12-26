@@ -22,16 +22,9 @@ export default function SignIn() {
 
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    
-
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
 
     try {
-      const { user, session, error } = await supabase.auth.signUp({
+      const { user, session, error } = await supabase.auth.signIn({
         email: data.get('email'), // 'stationaryowner@lnmiit.ac.in'
         password: data.get('password'), // 'password'
       })

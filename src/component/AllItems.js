@@ -6,8 +6,6 @@ import { Typography } from '@mui/material'
 
 const AllItems = () => {
 
-    const userIsAuth = false
-
     const fetchItemData = async () => {
         try {
             const { data: items, error } = await supabase
@@ -18,7 +16,7 @@ const AllItems = () => {
             else setitemData(items)
             console.log(items)
         } catch (error) {
-            alert(error.error_description || error.message)
+             alert(error.error_description || error.message)
         }
     }
 
@@ -29,13 +27,6 @@ const AllItems = () => {
 
     return (
         <div>
-            <Typography
-                variant="h4"
-                gutterBottom component="div"
-                style={{ margin: '10px' }}
-            >
-                All Items in one place
-            </Typography>
             <ul className='item' >
                 {itemData.map((item, index) => {
                     return <li key={index}><ItemCard data={item} /></li>

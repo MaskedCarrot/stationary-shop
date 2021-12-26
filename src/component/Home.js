@@ -9,16 +9,13 @@ import { supabase } from '../supabaseClient'
 /**
  * This is the first page that is displayed to the customer, employee, and the shopkeer.
  */
-const Home = (props) => {
-
-    const user = supabase.auth.user()
+const Home = () => {
 
     return (
         <div>
-            <Header userIsAuth={user && user.aud === 'authenticated'} />
+            <Header />
             <MainInfo />
             <AllItems />
-            <AllCategory />
             <Footer />
         </div>
     )
