@@ -15,7 +15,7 @@ const Home = (props) => {
     const user = supabase.auth.user()
 
     return (
-        <div>
+        <div >
             <Header userIsAuth={user && user.aud === 'authenticated'} />
             <MainInfo /> 
             <AllItems />
