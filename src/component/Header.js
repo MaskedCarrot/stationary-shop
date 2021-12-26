@@ -81,7 +81,7 @@ const Header = (props) => {
                     (
                         <div className='header-right-logged-in'>
                             <CategoryIcon />
-                            <InventoryIcon />
+                            <InventoryIcon onClick = {() => window.location.href='/additem'}/>
                             <GroupIcon onClick = {() => window.location.href='/showemployee'}/>
                             <MaterialUISwitch checked={shopStatus} onChange={setShopStatus}/>
                             

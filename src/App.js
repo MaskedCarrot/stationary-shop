@@ -9,6 +9,8 @@ import EditEmployee from './component/EditEmployee'
 import EditCategory from './component/EditCategory'
 import EmployeeList from './component/EmployeeList'
 import EditItem from './component/EditItem'
+import DeleteItem from './component/DeleteItem'
+import AddItem from './component/AddItem'
 import ShowEmployee from './component/showwmployee'
 
 const App = () => {
@@ -30,6 +32,8 @@ const App = () => {
                   <Route path="/editcategory" exact element={<EditCategory />} />
                   <Route path="/employeelist" exact element={<EmployeeList />} />
                   <Route path="/edititem" exact element={<EditItem />} />
+                  <Route path="/deleteitem" exact element={<DeleteItem />} />
+                  <Route path="/additem" exact element={<AddItem />} />
                   <Route path="/showemployee" exact element={<ShowEmployee />} />
               </Routes>
           </BrowserRouter>
