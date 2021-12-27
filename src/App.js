@@ -14,6 +14,7 @@ import EditItem from './component/EditItem'
 import DeleteItem from './component/DeleteItem'
 import AddItem from './component/AddItem'
 import ShowEmployee from './component/showwmployee'
+import ViewItem from './component/ViewItem'
 
 const App = () => {
     return (
@@ -39,6 +40,7 @@ const App = () => {
                   <Route path="/deleteitem" exact element={<DeleteItem />} />
                   <Route path="/additem" exact element={<AddItem />} />
                   <Route path="/showemployee" exact element={<ShowEmployee />} />
+                  <Route path="/item" exact element={<ViewItem />} />
               </Routes>
           </BrowserRouter>
         </div>

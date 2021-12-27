@@ -32,17 +32,19 @@ const AllEmployee = () => {
 
 
         <div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }} >
+                <Typography
+                    variant="h4"
+                    gutterBottom component="div"
+                    style={{ margin: '10px' }}>
+                    All Employees
+                </Typography>
 
-            <div className='submitButton'>
-                    <button type = 'submit' class="btn btn-primary" onClick={() => window.location.href='/addemployee'}>Add Employee</button>
+                <div className='submitButton'>
+                    <button type='submit' class="btn btn-primary" onClick={() => window.location.href = '/addemployee'}>Add Employee</button>
                 </div>
-            <Typography
-                variant="h4"
-                gutterBottom component="div"
-                style={{ margin: '10px' }}
-            >
-                All Employees
-            </Typography>
+            </div>
+            
             <ul className='employee' >
                 {employeeData.map((employee, index) => {
                     return <li key={index}><EmployeeCard data={employee} /></li>
