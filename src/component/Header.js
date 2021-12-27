@@ -93,9 +93,8 @@ const Header = () => {
                         <div className='header-right-logged-in'>
                             <CategoryIcon />
                             <InventoryIcon />
-                            <GroupIcon />
-                            <MaterialUISwitch defaultChecked={shopStatus} onChange={setShopStatus} />
-
+                            <GroupIcon onClick = {() => window.location.href='/showemployee'}/>
+                            <MaterialUISwitch checked={shopStatus} onChange={setShopStatus}/>
                         </div>
                     ) : (
                         <div className='header-right-logged-out'>
@@ -108,6 +107,7 @@ const Header = () => {
         </div>
     )
 }
+
 
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({

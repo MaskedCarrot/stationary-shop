@@ -10,16 +10,18 @@ import AllEmployee from './AllEmployee'
 /**
  * This is the first page that is displayed to the customer, employee, and the shopkeer.
  */
-const Home = () => {
+const ShowEmployee = (props) => {
+
+    const user = supabase.auth.user()
 
     return (
         <div>
-            <Header />
-            <MainInfo />
-            <AllItems />
+            <Header userIsAuth={user && user.aud === 'authenticated'} />
+            
+            <AllEmployee />
             <Footer />
         </div>
     )
 }
 
-export default Home
+export default ShowEmployee
