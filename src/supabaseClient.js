@@ -13,4 +13,4 @@ const neeraj = {
 
 
 // Create a single supabase client for interacting with your database 
-export const supabase = createClient(apoorv.url, apoorv.key)
+export const supabase = createClient(neeraj.url, neeraj.key)

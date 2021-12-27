@@ -39,7 +39,7 @@ const ItemCard = (props) => {
                                 Edit
                         </Button>
 
-                        <Button style={{color: 'black', backgroundColor: '#D3D3D3'}}
+                        <Button style={{color: 'black', backgroundColor: '#7CFC00'}}
                         onClick={() => window.location.href='/deleteitem'} 
                             size="small">
                                 Delete

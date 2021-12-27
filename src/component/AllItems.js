@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { supabase } from '../supabaseClient'
 import ItemCard from './ItemCard'
 import '../style/Items.css'
+import { Typography } from '@mui/material'
 
 const AllItems = (props) => {
 
@@ -32,6 +33,13 @@ const AllItems = (props) => {
 
     return (
         <div>
+            <Typography
+                variant="h4"
+                gutterBottom component="div"
+                style={{ margin: '10px' }}
+            >
+                All Items
+            </Typography>
             <ul className='item' >
                 {itemData.map((item, index) => {
                     return <li key={index}><ItemCard data={item} /></li>

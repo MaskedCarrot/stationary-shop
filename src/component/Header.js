@@ -75,6 +75,7 @@ const Header = (props) => {
         try {
             console.log('logging out')
             const { error } = await supabase.auth.signOut()
+            document.location.reload(true)
             if (error) throw error
             navigate('../', { replace: true });
         } catch (error) {
@@ -104,8 +105,8 @@ const Header = (props) => {
                 userIsAuth ?
                     (
                         <div className='header-right-logged-in'>
-                            <CategoryIcon />
-                            <InventoryIcon />
+                            <CategoryIcon onClick={() => window.location.href = '/category'} />
+                            <InventoryIcon onClick={() => window.location.href = '/additem'}/>
                             <GroupIcon onClick={() => window.location.href = '/showemployee'} />
                             <MaterialUISwitch checked={shopStatus} onChange={setShopStatus} />
                             <Button onClick={logOut} variant="contained">Logout</Button>

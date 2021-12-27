@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import Header from './Header'
 import MainInfo from './MainInfo'
 import Footer from './Footer'
-import AllItems from './AllItems'
 import AllCategory from './AllCategory'
 
 /**
@@ -21,8 +20,6 @@ const Home = () => {
         <div>
             <Header searchData={homeState} setSearchData={sethomeState}  />
             <MainInfo />
-            <AllItems data={homeState}/>
-            <br></br>
             <AllCategory data={homeState}/>
             <Footer />
         </div>

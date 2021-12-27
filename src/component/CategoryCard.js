@@ -1,7 +1,16 @@
 import { Card, CardContent, CardMedia, Typography, CardActions, Button } from '@mui/material'
 import React from 'react'
+import '../style/button.css'
+import { supabase } from '../supabaseClient'
+
 
 const CategoryCard = (props) => {
+
+    const user = supabase.auth.user()
+    const userIsAuth = user && user.aud === 'authenticated'
+
+    console.log(userIsAuth)
+
     return (
         <Card sx={{ maxWidth: 250 }}>
             <CardMedia
@@ -15,9 +24,28 @@ const CategoryCard = (props) => {
                     {props.data.name}
                 </Typography>
             </CardContent>
-            <CardActions>
-                <Button size="small">Edit</Button>
-            </CardActions>
+            {
+                userIsAuth ? 
+                (
+                    <CardActions>
+                        <Button style={{color: 'black', backgroundColor: '#D3D3D3'}}
+                        onClick={() => window.location.href='/editcategory'} 
+                            size="small">
+                                Edit
+                        </Button>
+
+                        <Button style={{color: 'black', backgroundColor: '#7CFC00'}}
+                        onClick={() => window.location.href='/deletecategory'} 
+                            size="small">
+                                Delete
+                        </Button>
+                    </CardActions>
+                ):(
+                    <CardActions>
+                        {/* <Button size="small">No Edit</Button> */}
+                    </CardActions>
+                )
+            }
         </Card>
     )
 }

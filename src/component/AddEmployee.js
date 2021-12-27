@@ -50,7 +50,7 @@ const AddEmployee = () => {
     }
 
 
-    window.location.href='/..';
+    window.location.href='/showemployee';
   };
 
 
@@ -59,7 +59,7 @@ const AddEmployee = () => {
     <Box  component="form" onSubmit={handleSubmit} >
     <div style={{margin: '20px auto', width: '50%'}}>
       <div style={{margin: '10px'}} className='edititem'>
-        EDIT Employee Details
+        ADD Employee Details
       </div>
 
       <TextField style={{ minWidth: '500px', padding: '5px' }} id="outlined-basic" className="editItemAtt" name="name" label="name" variant="outlined" />
