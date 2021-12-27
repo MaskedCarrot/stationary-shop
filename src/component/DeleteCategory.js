@@ -7,6 +7,9 @@ import Box from '@mui/material/Box';
 
 const DeleteCategory = () => {
 
+    const user = supabase.auth.user()
+    const userIsAuth = user && user.aud === 'authenticated'
+
   const navigate = useNavigate()
   const deleteSubmit = async (event) => {
 
@@ -62,6 +65,10 @@ const DeleteCategory = () => {
 
   return (
 
+    !userIsAuth ? (
+        window.location.href='/..'
+    ):
+    (
     <Box  component="form" onSubmit={deleteSubmit} >
     <div style={{margin: '20px auto', width: '50%'}}>
       <div className='edititem'>
@@ -73,6 +80,7 @@ const DeleteCategory = () => {
       <button type = 'submit' class="btn btn-primary" onClick= "deleteSubmit()">DELETE</button>
     </div>
     </Box>
+    )
   )
 }
 

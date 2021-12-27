@@ -13,14 +13,26 @@ import AllEmployee from './AllEmployee'
 const ShowEmployee = (props) => {
 
     const user = supabase.auth.user()
+    const userIsAuth = user && user.aud === 'authenticated'
+
+    console.log(userIsAuth)
+
+    
 
     return (
+
+        !userIsAuth ? (
+            window.location.href='/..'
+        ):
+        (
+
         <div>
             <Header userIsAuth={user && user.aud === 'authenticated'} />
             
             <AllEmployee />
             <Footer />
         </div>
+        )
     )
 }
 

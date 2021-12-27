@@ -88,7 +88,7 @@ const Header = (props) => {
         <div className={headerActive ? 'header active' : 'header'} >
 
             <div className='header-left' >
-                <MenuBookIcon style={{ fontSize: '50px', color: '#88c198', paddingLeft: '5px', paddingRight: '7px' }} />
+                <MenuBookIcon style={{ fontSize: '50px', color: '#88c198', paddingLeft: '5px', paddingRight: '7px' }} onClick={() => window.location.href = '/..'}/>
                 <span style={{ color: '#333333' }}>
                     Stationary Shop
                 </span>
