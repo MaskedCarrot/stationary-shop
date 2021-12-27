@@ -12,7 +12,7 @@ import { Box } from "@mui/system";
 import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
 
 
-const Header = () => {
+const Header = (props) => {
 
     const navigate = useNavigate()
     const user = supabase.auth.user()
@@ -67,7 +67,20 @@ const Header = () => {
 
     const searchItem = (event) => {
         event.preventDefault()
-        const data = new FormData(event.currentTarget).get('search')
+        const searchText = new FormData(event.currentTarget).get('search')
+        props.setSearchData(searchText)
+    }
+
+    async function logOut() {
+        try {
+            console.log('logging out')
+            const { error } = await supabase.auth.signOut()
+            if (error) throw error
+            navigate('../', { replace: true });
+        } catch (error) {
+            alert(error.error_description || error.message)
+        }
+
     }
 
     return (
@@ -93,8 +106,9 @@ const Header = () => {
                         <div className='header-right-logged-in'>
                             <CategoryIcon />
                             <InventoryIcon />
-                            <GroupIcon onClick = {() => window.location.href='/showemployee'}/>
-                            <MaterialUISwitch checked={shopStatus} onChange={setShopStatus}/>
+                            <GroupIcon onClick={() => window.location.href = '/showemployee'} />
+                            <MaterialUISwitch checked={shopStatus} onChange={setShopStatus} />
+                            <Button onClick={logOut} variant="contained">Logout</Button>
                         </div>
                     ) : (
                         <div className='header-right-logged-out'>

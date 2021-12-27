@@ -1,10 +1,14 @@
 import { Card, CardContent, CardMedia, Typography, CardActions, Button } from '@mui/material'
 import React from 'react'
 import '../style/button.css'
+import { supabase } from '../supabaseClient'
 
 const ItemCard = (props) => {
 
-    const userLoggedIn = props.userIsAuth
+    const user = supabase.auth.user()
+    const userIsAuth = user && user.aud === 'authenticated'
+
+    console.log(userIsAuth)
 
     return (
         <Card sx={{ maxWidth: 250 }}>
@@ -26,7 +30,7 @@ const ItemCard = (props) => {
                 </Typography>
             </CardContent>
             {
-                !userLoggedIn ? 
+                userIsAuth ? 
                 (
                     <CardActions>
                         <Button style={{color: 'black', backgroundColor: '#D3D3D3'}}
