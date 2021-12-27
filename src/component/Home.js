@@ -16,6 +16,7 @@ const Home = () => {
     }, [homeState])
 
     return (
+
         <div>
             <Header searchData={homeState} setSearchData={sethomeState}  />
             <MainInfo />

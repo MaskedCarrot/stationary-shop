@@ -5,7 +5,7 @@ import { Button, IconButton, Switch, TextField } from "@mui/material";
 import { supabase } from '../supabaseClient'
 import Box from '@mui/material/Box';
 
-const EditEmployee = () => {
+const AddEmployee = () => {
 
   const navigate = useNavigate()
   const handleSubmit = async (event) => {
@@ -33,20 +33,11 @@ const EditEmployee = () => {
     try {
 
       
-      const { data2, session2, error2 } = await supabase
-      .from('employee')
-      .update({ 'email': email })
-      .eq('name', name)
-      
-      const { data, session, error } = await supabase
-      .from('employee')
-      .update({ 'mobile': mobile })
-      .eq('name', name)
-      
-      const { data1, session1, error1 } = await supabase
-      .from('employee')
-      .update({ 'aadhar': aadhar })
-      .eq('name', name)
+        const { data,session, error } = await supabase
+        .from('employee')
+        .insert([
+          { 'name': name, 'email': email, 'mobile': mobile, 'aadhar': aadhar, 'image_url':image_url },
+        ])
       
       
       console.log("Success");
@@ -90,4 +81,4 @@ const EditEmployee = () => {
   )
 }
 
-export default EditEmployee
+export default AddEmployee

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { supabase } from '../supabaseClient'
 import EmployeeCard from './EmployeeCard'
 import '../style/EmployeeCard.css'
+import '../style/Employee.css'
 import { Typography } from '@mui/material'
 
 const AllEmployee = () => {
@@ -28,7 +29,13 @@ const AllEmployee = () => {
     }, [])
 
     return (
+
+
         <div>
+
+            <div className='submitButton'>
+                    <button type = 'submit' class="btn btn-primary" onClick={() => window.location.href='/addemployee'}>Add Employee</button>
+                </div>
             <Typography
                 variant="h4"
                 gutterBottom component="div"

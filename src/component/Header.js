@@ -109,6 +109,7 @@ const Header = (props) => {
                             <GroupIcon onClick={() => window.location.href = '/showemployee'} />
                             <MaterialUISwitch checked={shopStatus} onChange={setShopStatus} />
                             <Button onClick={logOut} variant="contained">Logout</Button>
+
                         </div>
                     ) : (
                         <div className='header-right-logged-out'>

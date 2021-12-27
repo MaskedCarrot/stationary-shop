@@ -30,22 +30,22 @@ const EditItem = () => {
     try {
 
       
-      // const { data,session,  error } = await supabase
-      // .from('items')
-      // .insert([
-      //   { name: name, price: price, quantity: quantity, image_url: image_url },
-      // ])
-      // console.log("Success");
-
-      const { data, session, error } = await supabase
+      const { data,session,  error } = await supabase
       .from('items')
-      .update({ price: price })
-      .eq('name', name)
+      .insert([
+        { name: name, price: price, quantity: quantity, image_url: image_url },
+      ])
+    //   console.log("Success");
 
-      const { data1, session1, error1 } = await supabase
-      .from('items')
-      .update({ quantity: quantity })
-      .eq('name', name)
+    //   const { data, session, error } = await supabase
+    //   .from('items')
+    //   .update({ price: price })
+    //   .eq('name', name)
+
+    //   const { data1, session1, error1 } = await supabase
+    //   .from('items')
+    //   .update({ quantity: quantity })
+    //   .eq('name', name)
 
 
       if (error) throw error
@@ -66,16 +66,16 @@ const EditItem = () => {
     <Box  component="form" onSubmit={handleSubmit} >
     <div style={{margin: '20px auto', width: '50%'}}>
       <div style={{margin: '10px'}} className='edititem'>
-        EDIT ITEMS
+        ADD ITEMS
       </div>
 
       <TextField style={{ minWidth: '500px', padding: '5px' }} id="outlined-basic" className="editItemAtt" name="item" label="item" variant="outlined" />
 
-      <TextField style={{ minWidth: '500px', padding: '5px' }} id="outlined-basic" className="editItemAtt" name="price" label="price" variant="outlined" />
+    <TextField style={{ minWidth: '500px', padding: '5px' }} id="outlined-basic" className="editItemAtt" name="price" label="price" variant="outlined" />
 
-      <TextField style={{ minWidth: '500px', padding: '5px' }} id="outlined-basic" className="editItemAtt" name="quantity" label="quantity" variant="outlined" />
+    <TextField style={{ minWidth: '500px', padding: '5px' }} id="outlined-basic" className="editItemAtt" name="quantity" label="quantity" variant="outlined" />
 
-      <TextField style={{ minWidth: '500px', padding: '5px' }} id="outlined-basic" className="editItemAtt" name="image_url" label="image_url" variant="outlined" />
+    <TextField style={{ minWidth: '500px', padding: '5px' }} id="outlined-basic" className="editItemAtt" name="image_url" label="image_url" variant="outlined" />
 
       <div className='submitButton'>
         <button type = 'submit' class="btn btn-primary" onClick= "handleSubmit()">Submit Changes</button>

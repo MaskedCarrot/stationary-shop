@@ -33,9 +33,14 @@ const EmployeeCard = (props) => {
                 (
                     <CardActions>
                         <Button style={{color: 'black', backgroundColor: '#D3D3D3'}}
-                        onClick={() => window.location.href='/edititem'} 
+                        onClick={() => window.location.href='/editemployee'} 
                             size="small">
                                 Edit
+                        </Button>
+                        <Button style={{color: 'black', backgroundColor: 'green'}}
+                        onClick={() => window.location.href='/deleteemployee'} 
+                            size="small">
+                                DELETE
                         </Button>
                     </CardActions>
                 ):(

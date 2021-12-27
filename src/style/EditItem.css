@@ -1,0 +1,17 @@
+.edititem {
+  /* color: red; */
+  text-align: justify;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.editItemAtt {
+  text-align: justify;
+  /* padding: 10px; */
+}
+
+.submitButton {
+  text-align: justify;
+  padding: 20px;
+}
