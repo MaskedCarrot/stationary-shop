@@ -1,7 +1,6 @@
 import React from 'react'
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import LNMIITWebsite from './LNMIITWebsite';
 
@@ -11,7 +10,7 @@ const Footer = () => {
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
-                minHeight: '10vh',
+                minHeight: '20vh',
             }}
         >
             <CssBaseline />

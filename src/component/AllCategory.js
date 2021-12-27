@@ -6,7 +6,10 @@ import { Typography } from '@mui/material'
 
 const AllCategory = () => {
 
-    const userIsAuth = false
+    const [categoryData, setitemData] = useState([])
+    useEffect(() => {
+        fetchItemData();
+    }, [])
 
     const fetchItemData = async () => {
         try {
@@ -21,11 +24,6 @@ const AllCategory = () => {
             alert(error.error_description || error.message)
         }
     }
-
-    const [categoryData, setitemData] = useState([])
-    useEffect(() => {
-        fetchItemData();
-    }, [])
 
     return (
         <div>
