@@ -35,30 +35,13 @@ const AllItems = (props) => {
 
     return (
         <div>
-            {
-                userIsAuth ?
-                    (
-                        <div style={{ display: 'flex', justifyContent: 'space-between' }} >
-                            <Typography
-                                variant="h4"
-                                style={{ padding: '30px' }}>
-                                All items in one place
-                            </Typography>
-                            <div className='submitButton'>
-                                <button type='submit' class="btn btn-primary" onClick={() => window.location.href = '/additem'}>Add Item</button>
-                            </div>
-                        </div>) 
-                        :
-                    (
-                        <Typography
-                            variant="h4"
-                            style={{ padding: '30px' }}>
-                            All items in one place
-                        </Typography>
-                    )
-
-
-            }
+            <Typography
+                variant="h4"
+                gutterBottom component="div"
+                style={{ margin: '10px' }}
+            >
+                All Items
+            </Typography>
             <ul className='item' >
                 {itemData.map((item, index) => {
                     return <li key={index}><ItemCard data={item} /></li>

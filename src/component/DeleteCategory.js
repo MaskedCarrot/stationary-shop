@@ -5,9 +5,9 @@ import { Button, IconButton, Switch, TextField } from "@mui/material";
 import { supabase } from '../supabaseClient'
 import Box from '@mui/material/Box';
 
-const DeleteItem = () => {
+const DeleteCategory = () => {
 
-  const user = supabase.auth.user()
+    const user = supabase.auth.user()
     const userIsAuth = user && user.aud === 'authenticated'
 
   const navigate = useNavigate()
@@ -19,9 +19,9 @@ const DeleteItem = () => {
 
     // eslint-disable-next-line no-console
 
-    const name = new FormData(event.currentTarget).get('item')
+    const name = new FormData(event.currentTarget).get('name')
     console.log({
-      name: new FormData(event.currentTarget).get('item'),
+      name: new FormData(event.currentTarget).get('name'),
     });
 
     try {
@@ -44,8 +44,8 @@ const DeleteItem = () => {
     //   .update({ quantity: quantity })
     //   .eq('name', name)
 
-    const { data,session,  error } = await supabase
-    .from('items')
+    const { data, session,  error } = await supabase
+    .from('categories')
     .delete()
     .eq('name', name)
 
@@ -66,23 +66,22 @@ const DeleteItem = () => {
   return (
 
     !userIsAuth ? (
-      window.location.href='/..'
-  ):
-  (
-
+        window.location.href='/..'
+    ):
+    (
     <Box  component="form" onSubmit={deleteSubmit} >
     <div style={{margin: '20px auto', width: '50%'}}>
       <div className='edititem'>
-        DELETE ITEMS
+        DELETE CATEGORY
       </div>
 
-      <TextField style={{ minWidth: '500px' }} id="outlined-basic" name="item" label="item" variant="outlined" />
+      <TextField style={{ minWidth: '500px' }} id="outlined-basic" name="name" label="name" variant="outlined" />
       
       <button type = 'submit' class="btn btn-primary" onClick= "deleteSubmit()">DELETE</button>
     </div>
     </Box>
-  )
+    )
   )
 }
 
-export default DeleteItem
+export default DeleteCategory

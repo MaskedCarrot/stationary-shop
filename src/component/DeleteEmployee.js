@@ -7,6 +7,9 @@ import Box from '@mui/material/Box';
 
 const DeleteEmployee = () => {
 
+  const user = supabase.auth.user()
+    const userIsAuth = user && user.aud === 'authenticated'
+
   const navigate = useNavigate()
   const handleSubmit = async (event) => {
 
@@ -47,6 +50,11 @@ const DeleteEmployee = () => {
 
 
   return (
+
+    !userIsAuth ? (
+      window.location.href='/..'
+  ):
+  (
     <Box  component="form" onSubmit={handleSubmit} >
     <div style={{margin: '20px auto', width: '50%'}}>
       <div style={{margin: '10px'}} className='edititem'>
@@ -61,6 +69,7 @@ const DeleteEmployee = () => {
       </div>
     </div>
     </Box>
+  )
 
   )
 }

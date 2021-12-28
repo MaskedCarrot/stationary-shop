@@ -37,7 +37,7 @@ const EmployeeCard = (props) => {
                             size="small">
                                 Edit
                         </Button>
-                        <Button style={{color: 'black', backgroundColor: 'green'}}
+                        <Button style={{color: 'black', backgroundColor: '#7CFC00'}}
                         onClick={() => window.location.href='/deleteemployee'} 
                             size="small">
                                 DELETE

@@ -39,6 +39,7 @@ const ItemCard = (props) => {
                                 Edit
                             </Button>
 
+
                             <Button color="error"
                                 onClick={() => window.location.href = '/deleteitem'}
                                 size="small">

@@ -75,6 +75,7 @@ const Header = (props) => {
         try {
             console.log('logging out')
             const { error } = await supabase.auth.signOut()
+            document.location.reload(true)
             if (error) throw error
             navigate('../', { replace: true });
         } catch (error) {
@@ -87,7 +88,7 @@ const Header = (props) => {
         <div className={headerActive ? 'header active' : 'header'} >
 
             <div className='header-left' >
-                <MenuBookIcon style={{ fontSize: '50px', color: '#88c198', paddingLeft: '5px', paddingRight: '7px' }} />
+                <MenuBookIcon style={{ fontSize: '50px', color: '#88c198', paddingLeft: '5px', paddingRight: '7px' }} onClick={() => window.location.href = '/..'}/>
                 <span style={{ color: '#333333' }}>
                     Stationary Shop
                 </span>
@@ -104,8 +105,8 @@ const Header = (props) => {
                 userIsAuth ?
                     (
                         <div className='header-right-logged-in'>
-                            <CategoryIcon />
-                            <InventoryIcon />
+                            <CategoryIcon onClick={() => window.location.href = '/category'} />
+                            <InventoryIcon onClick={() => window.location.href = '/additem'}/>
                             <GroupIcon onClick={() => window.location.href = '/showemployee'} />
                             <MaterialUISwitch checked={shopStatus} onChange={setShopStatus} />
                             <Button onClick={logOut} variant="outlined">Logout</Button>
