@@ -28,7 +28,6 @@ const ShowEmployee = (props) => {
 
         <div>
             <Header userIsAuth={user && user.aud === 'authenticated'} />
-            
             <AllEmployee />
             <Footer />
         </div>

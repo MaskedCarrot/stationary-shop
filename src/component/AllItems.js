@@ -6,6 +6,8 @@ import { Typography } from '@mui/material'
 
 const AllItems = (props) => {
 
+    const userIsAuth = true
+
     const fetchItemData = async () => {
         try {
             const { data: items, error } = (props.data == null) ?
@@ -16,7 +18,7 @@ const AllItems = (props) => {
                 await supabase
                     .from('items')
                     .select('*')
-                    .ilike('name', '%'+props.data+'%')
+                    .ilike('name', '%' + props.data + '%')
 
             if (error) throw error
             else setitemData(items)

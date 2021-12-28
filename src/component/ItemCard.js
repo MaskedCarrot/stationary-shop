@@ -30,26 +30,27 @@ const ItemCard = (props) => {
                 </Typography>
             </CardContent>
             {
-                userIsAuth ? 
-                (
-                    <CardActions>
-                        <Button style={{color: 'black', backgroundColor: '#D3D3D3'}}
-                        onClick={() => window.location.href='/edititem'} 
-                            size="small">
+                userIsAuth ?
+                    (
+                        <CardActions>
+                            <Button
+                                onClick={() => window.location.href = '/edititem'}
+                                size="small">
                                 Edit
-                        </Button>
+                            </Button>
 
-                        <Button style={{color: 'black', backgroundColor: '#7CFC00'}}
-                        onClick={() => window.location.href='/deleteitem'} 
-                            size="small">
+
+                            <Button color="error"
+                                onClick={() => window.location.href = '/deleteitem'}
+                                size="small">
                                 Delete
-                        </Button>
-                    </CardActions>
-                ):(
-                    <CardActions>
-                        {/* <Button size="small">No Edit</Button> */}
-                    </CardActions>
-                )
+                            </Button>
+                        </CardActions>
+                    ) : (
+                        <CardActions>
+                            {/* <Button size="small">No Edit</Button> */}
+                        </CardActions>
+                    )
             }
         </Card>
     )
