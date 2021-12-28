@@ -28,13 +28,13 @@ const CategoryCard = (props) => {
                 userIsAuth ? 
                 (
                     <CardActions>
-                        <Button style={{color: 'black', backgroundColor: '#D3D3D3'}}
+                        <Button 
                         onClick={() => window.location.href='/editcategory'} 
                             size="small">
                                 Edit
                         </Button>
 
-                        <Button style={{color: 'black', backgroundColor: '#7CFC00'}}
+                        <Button color='error'
                         onClick={() => window.location.href='/deletecategory'} 
                             size="small">
                                 Delete
