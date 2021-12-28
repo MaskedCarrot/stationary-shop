@@ -21,9 +21,9 @@ const Home = () => {
         <div>
             <Header searchData={homeState} setSearchData={sethomeState}  />
             <MainInfo />
-            <AllItems data={homeState}/>
+            { homeState == null ?(<AllCategory data={homeState}/>) :(<div></div>) }
             <br></br>
-            <AllCategory data={homeState}/>
+            <AllItems data={homeState}/>
             <Footer />
         </div>
     )
